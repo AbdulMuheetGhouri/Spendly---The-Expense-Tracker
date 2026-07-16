@@ -1,0 +1,66 @@
+.profile-card {
+  padding: 32px;
+  max-width: 480px;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--sky), var(--teal));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(205, 212, 221, 0.6);
+}
+
+.profile-row:last-of-type {
+  border-bottom: none;
+}
+
+.profile-row span:first-child {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.profile-row span:last-child {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.status-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.status-badge.verified {
+  background: var(--income-green-soft);
+  color: var(--income-green);
+}
+
+.status-badge.unverified {
+  background: var(--expense-red-soft);
+  color: var(--expense-red);
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}

@@ -1,0 +1,141 @@
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  margin: 20px 0 20px 20px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--sky) 0%, var(--teal) 100%);
+  box-shadow: 0 4px 14px rgba(34, 129, 154, 0.35);
+}
+
+.brand-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--teal-deep);
+}
+
+.verify-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--expense-red);
+  background: var(--expense-red-soft);
+  padding: 6px 10px;
+  border-radius: 999px;
+  text-align: center;
+}
+
+.sidebar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 0.94rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-link:hover {
+  background: rgba(144, 194, 231, 0.22);
+  color: var(--teal-deep);
+}
+
+.sidebar-link.active {
+  background: linear-gradient(135deg, rgba(144, 194, 231, 0.45), rgba(34, 129, 154, 0.2));
+  color: var(--teal-deep);
+  font-weight: 700;
+}
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--mist);
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.sidebar-logout:hover {
+  background: var(--expense-red-soft);
+  color: var(--expense-red);
+  border-color: transparent;
+}
+
+@media (max-width: 860px) {
+  .sidebar {
+    position: fixed;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    top: auto;
+    height: auto;
+    width: auto;
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+    z-index: 50;
+  }
+
+  .sidebar-brand,
+  .verify-pill,
+  .sidebar-logout span {
+    display: none;
+  }
+
+  .sidebar-logout {
+    padding: 11px;
+  }
+
+  .sidebar-links {
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+  }
+
+  .sidebar-link span {
+    display: none;
+  }
+
+  .sidebar-link {
+    padding: 10px;
+  }
+}

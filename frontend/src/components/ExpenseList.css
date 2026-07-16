@@ -1,0 +1,136 @@
+.expense-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.expense-item:hover {
+  transform: translateY(-1px);
+}
+
+.expense-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expense-icon.expense {
+  background: var(--expense-red-soft);
+  color: var(--expense-red);
+}
+
+.expense-icon.income {
+  background: var(--income-green-soft);
+  color: var(--income-green);
+}
+
+.expense-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.expense-desc {
+  margin: 0 0 2px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expense-meta {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.expense-amount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  white-space: nowrap;
+}
+
+.expense-amount.expense {
+  color: var(--expense-red);
+}
+
+.expense-amount.income {
+  color: var(--income-green);
+}
+
+.expense-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--mist);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background: #fff;
+  color: var(--teal-deep);
+}
+
+.icon-btn.danger:hover {
+  color: var(--expense-red);
+  border-color: rgba(193, 92, 92, 0.4);
+}
+
+.icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.expense-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.expense-empty p {
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.expense-empty span {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .expense-meta {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+.form-page-card {
+  padding: 32px;
+  max-width: 560px;
+}
+
+.form-page-card h1 {
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.form-page-card > p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+}

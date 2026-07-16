@@ -1,0 +1,73 @@
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 960px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+}
+
+.stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tone-positive .stat-icon {
+  background: var(--income-green-soft);
+  color: var(--income-green);
+}
+
+.tone-negative .stat-icon {
+  background: var(--expense-red-soft);
+  color: var(--expense-red);
+}
+
+.tone-neutral .stat-icon {
+  background: rgba(144, 194, 231, 0.3);
+  color: var(--teal-deep);
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin: 0 0 2px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.tone-negative .stat-value {
+  color: var(--expense-red);
+}
+
+.tone-positive .stat-value {
+  color: var(--teal-deep);
+}

@@ -1,0 +1,67 @@
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.analytics-panel {
+  padding: 24px;
+}
+
+.analytics-panel h2 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.analytics-panel > p {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin: 0 0 20px;
+}
+
+.legend-list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.legend-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-row span:first-of-type {
+  flex: 1;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.legend-row .legend-value {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.analytics-empty {
+  text-align: center;
+  color: var(--ink-soft);
+  padding: 40px 10px;
+}
