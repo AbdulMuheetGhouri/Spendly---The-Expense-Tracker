@@ -24,7 +24,6 @@ app.use(cors({
     origin: ["http://localhost:5173","https://spendly-frontend-eight.vercel.app"],
     credentials: true
 }));
-app.options('*', cors());
 app.use(cookieParser());
 
 app.set("view engine", "ejs");
