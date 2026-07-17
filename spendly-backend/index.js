@@ -21,7 +21,7 @@ const otpController = require("./controllers/otp");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: ["http://localhost:5173","https://spendly-frontend-eight.vercel.app/"],
+    origin: ["http://localhost:5173","https://spendly-frontend-eight.vercel.app"],
     credentials: true
 }));
 
