@@ -1,7 +1,6 @@
 # Spendly – MERN Expense Tracker
 
 ![MERN](https://img.shields.io/badge/Stack-MERN-green)
-![License](https://img.shields.io/badge/License-MIT-blue)
 
 ## Overview
 Spendly is a full-stack expense tracking application built with the MERN stack. It allows users to register, verify their email using OTP, securely authenticate, manage income and expenses, visualize spending analytics, and maintain their profile.
