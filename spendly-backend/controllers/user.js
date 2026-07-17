@@ -306,7 +306,8 @@ module.exports.userLogin = async (req, res, next) => {
 
         // JWT token and cookie setup
         let token = jwt.sign({ user: user._id, email: user.email }, process.env.JWT_SECRET);
-        res.cookie("token", token, { httpOnly: true, maxAge: 432000000, path: "/",samsite: "None", secure: true });
+        res.cookie("token", token, { httpOnly: true, maxAge: 432000000, path: "/",        sameSite: "none",
+        secure: true, });
 
         return res.status(200).json({
             success: true,
