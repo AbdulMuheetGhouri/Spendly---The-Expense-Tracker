@@ -1,0 +1,173 @@
+    /* 1. Global Reset & Body Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #F4F6FB;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* 2. Main Card Container */
+    .card-container {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 400px;
+      padding: 36px 32px;
+      border-radius: 18px;
+      border: 1px solid #E4E9F2;
+      box-shadow: 0 4px 24px rgba(99,84,200,.07);
+    }
+
+    /* Logo */
+    .form-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .logo-ico {
+      width: 44px; height: 44px;
+      background: #7C5CFC;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .logo-ico svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* 3. Typography & Headings */
+    .form-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .form-header h1 {
+      color: #16192C;
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      margin-bottom: 4px;
+    }
+
+    .form-header p {
+      color: #8892A4;
+      font-size: 13px;
+    }
+
+    /* 4. Form Layout & Inputs */
+    .space-y-4>*+* {
+      margin-top: 16px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group label {
+      color: #8892A4;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 7px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 13px;
+      background-color: #F4F6FB;
+      border: 1px solid #E4E9F2;
+      border-radius: 10px;
+      font-size: 13px;
+      color: #16192C;
+      font-family: 'Inter', sans-serif;
+      transition: border-color .15s, box-shadow .15s, background .15s;
+      outline: none;
+    }
+
+    .input-group input::placeholder {
+      color: #C2CAD8;
+    }
+
+    /* Input Focus State */
+    .input-group input:focus {
+      background-color: #FFFFFF;
+      border-color: #7C5CFC;
+      box-shadow: 0 0 0 3px rgba(124,92,252,.1);
+    }
+
+    /* 5. Primary Submit Button */
+    .btn-submit {
+      width: 100%;
+      padding: 11px;
+      background-color: #7C5CFC;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background .15s, transform .1s;
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      letter-spacing: .01em;
+    }
+
+    .btn-submit:hover {
+      background-color: #6B4EE8;
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+
+    /* 6. Global Error Box Style */
+    .error-box {
+      background-color: #FFE4E4;
+      border: 1px solid #FFCECE;
+      border-radius: 10px;
+      padding: 11px 16px;
+      margin-bottom: 20px;
+    }
+
+    .error-text {
+      color: #F03E3E;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .error-text:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 7. Footer Links */
+    .form-footer {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 13px;
+      color: #8892A4;
+    }
+
+    .form-footer a {
+      color: #7C5CFC;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }

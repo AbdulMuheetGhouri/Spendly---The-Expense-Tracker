@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #F4F6FB;
+  --surface: #FFFFFF;
+  --border:  #E4E9F2;
+  --text:    #16192C;
+  --sub:     #8892A4;
+  --muted:   #C2CAD8;
+  --accent:  #7C5CFC;
+  --a-light: #EDE8FF;
+  --a-mid:   #C4B5FD;
+  --green:   #0EAD69;
+  --g-light: #D4F7E7;
+  --red:     #F03E3E;
+  --r-light: #FFE4E4;
+  --amber:   #F59F00;
+  --am-light:#FFF3CD;
+  --sky:     #0EA5E9;
+  --sk-light:#DBEAFE;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─────────────────────────────────────────
+   NAVBAR
+───────────────────────────────────────── */
+.navbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+.nav-logo svg { color: var(--accent); }
+.nav-logo strong {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.3px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sub);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all .15s;
+}
+.nav-link:hover { color: var(--text); background: var(--bg); }
+.nav-link.active { color: var(--accent); background: var(--a-light); font-weight: 600; }
+
+.nav-sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+
+/* welcome dropdown */
+.nav-dropdown { position: relative; }
+
+.nav-welcome-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px 6px 7px;
+  background: var(--g-light);
+  border: 1px solid #A7F0C8;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  width: auto;
+  transition: background .15s;
+}
+.nav-welcome-btn:hover { background: #C0F2DA; }
+
+.nav-avatar {
+  width: 26px; height: 26px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.nav-drop-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  min-width: 190px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  padding: 6px;
+  z-index: 200;
+}
+
+.nav-drop-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sub);
+  text-decoration: none;
+  transition: all .12s;
+}
+.nav-drop-menu a:hover { background: var(--bg); color: var(--text); }
+
+.nav-drop-hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 4px 0;
+}
+
+.nav-drop-menu form { margin: 0; }
+.nav-drop-menu form button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: var(--red);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background .12s;
+}
+.nav-drop-menu form button:hover { background: var(--r-light); }
+
+/* ─────────────────────────────────────────
+   PAGE
+───────────────────────────────────────── */
+.page {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 24px;
+  flex: 1;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.page-header h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -.4px;
+}
+.page-header p { font-size: 12px; color: var(--sub); margin-top: 3px; }
+
+/* ─────────────────────────────────────────
+   CHARTS GRID
+───────────────────────────────────────── */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.chart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.chart-head h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.chart-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 99px;
+  border: 1px solid;
+}
+.b-purple { color: var(--accent); background: var(--a-light); border-color: var(--a-mid); }
+.b-green  { color: var(--green);  background: var(--g-light); border-color: #A7F0C8; }
+.b-amber  { color: var(--amber);  background: var(--am-light);border-color: #FDDBA0; }
+.b-sky    { color: var(--sky);    background: var(--sk-light);border-color: #BAE0FD; }
+
+/* fixed height — stops pie/donut from going huge */
+.chart-wrap {
+  position: relative;
+  height: 220px;
+}
+.chart-wrap canvas { max-height: 220px; }
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 18px 28px;
+  margin-top: auto;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 720px) {
+  .charts-grid { grid-template-columns: 1fr; }
+  .chart-wrap  { height: 200px; }
+  .navbar      { padding: 0 16px; }
+  .page        { padding: 20px 16px; }
+
+}
+
+@media (max-width: 480px) {
+  .nav-link { display: none; }
+  .nav-sep  { display: none; }
+}

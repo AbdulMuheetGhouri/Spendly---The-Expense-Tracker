@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #F4F6FB;
+  --surface: #FFFFFF;
+  --border:  #E4E9F2;
+  --text:    #16192C;
+  --sub:     #8892A4;
+  --muted:   #C2CAD8;
+  --accent:  #7C5CFC;
+  --a-light: #EDE8FF;
+  --a-mid:   #C4B5FD;
+  --green:   #0EAD69;
+  --g-light: #D4F7E7;
+  --red:     #F03E3E;
+  --r-light: #FFE4E4;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+nav {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 0 28px !important;
+  height: 60px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+nav > div:first-child { gap: 9px !important; }
+nav > div:first-child svg { color: var(--accent); }
+nav > div:first-child strong {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--text); letter-spacing: -.3px;
+}
+nav > div:last-child { gap: 4px !important; }
+nav a {
+  padding: 7px 13px; font-size: 13px; font-weight: 500;
+  color: var(--sub); text-decoration: none;
+  border-radius: 8px; transition: all .15s;
+}
+nav a:hover { color: var(--text); background: var(--bg); }
+nav > div:last-child > div > button {
+  padding: 6px 14px;
+  background: var(--g-light);
+  border: 1px solid #A7F0C8;
+  border-radius: 99px;
+  font-size: 13px; font-weight: 600;
+  color: var(--green);
+  font-family: 'Inter', sans-serif;
+  cursor: pointer; width: auto;
+  transition: background .15s;
+}
+nav > div:last-child > div > button:hover { background: #C0F2DA; }
+nav div[style*="position:relative"] > div {
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  background: var(--surface) !important;
+  min-width: 190px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  padding: 6px; margin-top: 8px !important;
+}
+nav div[style*="position:relative"] > div a {
+  display: block; padding: 9px 12px !important;
+  border-radius: 9px; font-size: 13px; font-weight: 500;
+  color: var(--sub); text-decoration: none; transition: all .12s;
+}
+nav div[style*="position:relative"] > div a:hover { background: var(--bg); color: var(--text); }
+nav div[style*="position:relative"] > div a:last-child { color: var(--red); }
+nav div[style*="position:relative"] > div a:last-child:hover { background: var(--r-light); }
+nav div[style*="position:relative"] > div hr { border: none; border-top: 1px solid var(--border); margin: 4px 0; }
+
+/* ── PAGE ── */
+.page {
+  min-height: calc(100vh - 60px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 36px 20px;
+}
+
+/* ── FLASH ERROR ── */
+.flash-error {
+  background: var(--r-light);
+  border: 1px solid #FFCECE;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-size: 13px; font-weight: 500;
+  color: var(--red);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px 32px;
+  width: 100%; max-width: 460px;
+  box-shadow: 0 4px 24px rgba(99,84,200,.07);
+}
+
+.card-top {
+  display: flex; flex-direction: column;
+  align-items: center; margin-bottom: 28px;
+}
+.card-icon {
+  width: 46px; height: 46px;
+  background: var(--a-light); border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.card-icon svg {
+  width: 20px; height: 20px;
+  fill: none; stroke: var(--accent);
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.card-top h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--text); letter-spacing: -.4px;
+}
+.card-top p { font-size: 13px; color: var(--sub); margin-top: 4px; }
+
+/* ── FIELDS ── */
+.field { margin-bottom: 16px; }
+.field label {
+  display: block; font-size: 11px; font-weight: 600;
+  color: var(--sub); text-transform: uppercase;
+  letter-spacing: .06em; margin-bottom: 7px;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%; padding: 10px 13px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; font-size: 13px; color: var(--text);
+  font-family: 'Inter', sans-serif; outline: none; resize: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent); background: #fff;
+  box-shadow: 0 0 0 3px rgba(124,92,252,.1);
+}
+.field input::placeholder,
+.field textarea::placeholder { color: var(--muted); }
+.field select {
+  appearance: none; cursor: pointer; color: var(--sub);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238892A4' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 13px center;
+  padding-right: 36px; background-color: var(--bg);
+}
+.field textarea { min-height: 88px; line-height: 1.5; }
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.pfx-wrap { position: relative; }
+.pfx-wrap .pfx {
+  position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  font-size: 12px; font-weight: 600; color: var(--sub); pointer-events: none;
+}
+.pfx-wrap input { padding-left: 36px; }
+
+/* ── BUTTONS ── */
+.btn-submit {
+  width: 100%; padding: 12px;
+  background: var(--accent); color: #fff;
+  border: none; border-radius: 11px;
+  font-size: 14px; font-weight: 600;
+  font-family: 'Inter', sans-serif; cursor: pointer;
+  margin-top: 6px; letter-spacing: .01em;
+  transition: background .15s, transform .1s;
+}
+.btn-submit:hover  { background: #6B4EE8; }
+.btn-submit:active { transform: scale(.99); }
+
+.back-link {
+  display: block; text-align: center; margin-top: 16px;
+  font-size: 13px; color: var(--sub); text-decoration: none;
+  transition: color .15s;
+}
+.back-link:hover { color: var(--accent); }
+
+@media (max-width: 500px) {
+  .card { padding: 28px 20px; }
+  .field-row { grid-template-columns: 1fr; }
+}
