@@ -26,8 +26,6 @@ app.use(cors({
 }));
 app.use(cookieParser());
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -39,16 +37,9 @@ app.use(
         resave: false
     })
 )
-const flash = require("connect-flash");
 const user = require("./models/user");
 const console = require("console");
 const expenses = require("./models/expenses");
-app.use(flash());
-app.use((req, res, next) => {
-    res.locals.success = req.flash("success");
-    res.locals.error = req.flash("error");
-    next();
-});
 
 
 const userRoutes = require("./routes/user");
@@ -60,26 +51,22 @@ app.use("/",expenseRoutes);
 app.use("/",otpRoutes);
 
 
-app.get("/",(req,res)=>{res.render("index")});
+app.get("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "Spendly Backend API is running."
+    });
+});
 
 app.listen("3000", () => {
     console.log("server is listening at port 3000");
 });
 
 app.use((err, req, res, next) => {
-    let { status = 500, message = "Some error occured" } = err;
     console.error(err);
 
-    // If the client expects JSON (API call), return JSON instead of redirecting
-    const accept = req.headers && req.headers.accept ? req.headers.accept : '';
-    if (accept.includes('application/json') || req.xhr) {
-        return res.status(status).json({ success: false, message });
-    }
-
-    if (typeof req.flash === 'function') {
-        req.flash("error", message);
-        return res.status(status).redirect(req.get("Referrer") || "/dashboard");
-    }
-
-    return res.status(status).send(message);
+    res.status(err.status || 500).json({
+        success: false,
+        message: err.message || "Internal Server Error",
+    });
 });

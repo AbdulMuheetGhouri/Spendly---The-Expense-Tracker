@@ -1,12 +1,18 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI)
-    .then(() => {
-        console.log("connected to database successfully");
-    })
-    .catch((e) => {
-        console.log(e);
-    });
+
+async function connectDB() {
+    try {
+        await mongoose.connect(process.env.MONGODB_URI);
+        console.log(" MongoDB Connected");
+    } catch (err) {
+        console.error(" MongoDB Connection Error:", err);
+        process.exit(1);
+    }
+}
+
+connectDB();
+
 
 let userSchema = mongoose.Schema({
     name: {
