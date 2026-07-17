@@ -179,7 +179,7 @@ export default function Landing() {
 
       <footer className="landing-footer">
         © {new Date().getFullYear()} Spendly. Built for people who want to
-        actually know where their money went.
+        actually know where their money went. by Abdul Muheet Ghouri
       </footer>
     </div>
   );
