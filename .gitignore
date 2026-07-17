@@ -1,8 +1,7 @@
-# Sub-folders ki .env files ko rokne ke liye
+
 spendly-backend/.env
 spendly-frontend/.env
 
-node_modules/
 spendly-backend/node_modules/
 spendly-frontend/node_modules/
 .DS_Store
