@@ -179,7 +179,7 @@ module.exports.otpVerify = async (req, res, next) => {
                 path: "/",
                 maxAge: 432000000,
                 httpOnly: true,
-                samsite: "None", secure: true
+samSite: "none", secure: true
             });
 
             return res.status(200).json({
