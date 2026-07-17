@@ -3,7 +3,7 @@
 A full-stack Expense Tracker built with Node.js, Express.js, MongoDB, and EJS. The application enables users to securely manage their income and expenses, verify their accounts through OTP-based email authentication, analyze spending patterns, and maintain complete control over their financial records.
 
 ---
-
+    
 ## 🚀 Features
 
 ### Authentication & Authorization
