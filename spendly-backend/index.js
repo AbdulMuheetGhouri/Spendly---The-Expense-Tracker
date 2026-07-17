@@ -76,7 +76,6 @@ app.use((err, req, res, next) => {
         return res.status(status).json({ success: false, message });
     }
 
-    // Fallback for browser routes: use flash if available, otherwise send plain text
     if (typeof req.flash === 'function') {
         req.flash("error", message);
         return res.status(status).redirect(req.get("Referrer") || "/dashboard");
